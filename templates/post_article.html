@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div>
+        <html>
+           <body>
+              <form action = "http://localhost:5000/article" method = "POST">
+                 <p>작성자 <input type = "text" name = "author" style="width: 8rem"/></p>
+                 <p>제  목  <input type = "text" name = "title" style="width: 16rem"/></p>
+                 <p>내  용 </p><textarea type = "text" name = "content" cols="40" rows="20"></textarea>
+                 <p><input type = "submit" value = "submit" /></p>
+              </form>
+           </body>
+        </html>
+    </div>
+{% endblock %}

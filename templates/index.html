@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div>
+        <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;width:50rem;padding:10px}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#fff;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+        .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-0pky{border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-abip{background-color:#f9f9f9;border-color:inherit;text-align:center;vertical-align:top}
+        </style>
+        <table class="tg">
+          <tr>
+            <th class="tg-0pky">작성자</th>
+            <th class="tg-0pky">제목</th>
+            <th class="tg-0pky">작성일</th>
+          </tr>
+          {% for article in articles %}
+              <tr>
+                <td class="tg-c3ow">{{ article.author }}</td>
+                  <td class="tg-abip">
+                      <a href="{{ '/article/' ~ article.id }}">
+                          {{ article.title }}
+                      </a>
+                  </td>
+                <td class="tg-c3ow">{{ article.created_at }}</td>
+              </tr>
+          {% endfor %}
+        </table>
+    </div>
+    <div align="center">
+        <a href="/article">글쓰기</a>
+    </div>
+{% endblock %}
